@@ -7,9 +7,6 @@ enum Operator {
     divide = '÷',
 }
 
-
-
-
 export const useCalculator = () => {
 
     const [formula, setFormula] = useState('');
@@ -29,16 +26,10 @@ export const useCalculator = () => {
 
     }, [number]);
 
-
     useEffect(() => {
         const subResult = calculateSubResult();
         setPrevNumber(`${subResult}`);
     }, [formula])
-
-
-
-
-
 
     const clean = () => {
         setNumber('0');
@@ -66,7 +57,6 @@ export const useCalculator = () => {
 
     };
 
-
     const toggleSign = () => {
         if (number.includes('-')) {
             return setNumber(number.replace('-', ''));
@@ -74,7 +64,6 @@ export const useCalculator = () => {
 
         setNumber('-' + number);
     };
-
 
     const buildNumber = (numberString: string) => {
 
@@ -180,8 +169,6 @@ export const useCalculator = () => {
         }
 
     };
-
-
 
     return {
         // Properties
